@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# CoinTrace
-=======
-<<<<<<< HEAD
-# CoinTrace
-=======
+# Coin Trace 
+Get the real time coin prices of globally most trending coins
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
