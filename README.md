@@ -1,6 +1,10 @@
 # Coin Trace 
 Get the real time coin prices of globally most trending coins
+
+Live Link : https://candid-kitsune-a40eca.netlify.app/
+
 # Getting Started with Create React App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
