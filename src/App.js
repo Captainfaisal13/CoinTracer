@@ -44,7 +44,7 @@ export default function App() {
           />
           <div className="content-container">
             <h1 className="heading-title">
-              Coin <span className="heading-chorus">Trace</span>
+              Coin <span className="heading-chorus">Test</span>
             </h1>
             <div className="table-container">
               <table className="table">
