@@ -1,32 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Coin from "./coin";
 
-const url =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false";
-
-const Coins = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [coins, setCoins] = useState([]);
-
-  const getCoins = async () => {
-    const response = await fetch(url);
-    if (response.status >= 200 && response.status <= 299) {
-      const data = await response.json();
-      setIsLoading(false);
-      setCoins(data);
-      // console.log(data);
-    } else {
-      setIsLoading(false);
-      setIsError(true);
-      throw new Error(`${response.status}`);
-    }
-  };
-
-  useEffect(() => {
-    getCoins();
-  }, []);
-
+const Coins = ({ isLoading, isError, coins }) => {
   if (isLoading) {
     return (
       <div className="full-page">
@@ -41,11 +16,38 @@ const Coins = () => {
     );
   } else {
     return (
-      <tbody>
-        {coins.map((coin) => {
-          return <Coin key={coin.id} {...coin} />;
-        })}
-      </tbody>
+      <div className="table-container">
+        <table className="table">
+          <thead className="table-heading-row">
+            <tr className="coin-heading-row">
+              <th>
+                <p>#</p>
+              </th>
+              <th>
+                <p>Coin</p>
+              </th>
+              <th>
+                <p>Price</p>
+              </th>
+              <th className="mobile-hide2">
+                <p>24h</p>
+              </th>
+              <th className="mobile-hide">
+                <p>Volume</p>
+              </th>
+              <th className="mobile-hide">
+                <p>Mkt Cap</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {coins.map((coin) => {
+              return <Coin key={coin.id} {...coin} />;
+            })}
+          </tbody>
+        </table>
+      </div>
     );
   }
 };

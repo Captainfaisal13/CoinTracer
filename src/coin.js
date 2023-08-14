@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Coin = ({
   id,
@@ -14,9 +15,16 @@ const Coin = ({
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const navigate = useNavigate();
 
   return (
-    <tr className="coin-row">
+    <tr
+      className="coin-row"
+      style={{ cursor: "pointer" }}
+      onClick={() => {
+        navigate(`/${id}`);
+      }}
+    >
       <td>
         <p>{market_cap_rank}</p>
       </td>
