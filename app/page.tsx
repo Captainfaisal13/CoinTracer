@@ -45,7 +45,7 @@ export default function Home() {
         className="text-base w-full text-center font-normal border-separate border-spacing-10"
       >
         <thead className="">
-          <tr style={{ boxShadow: "0 0 12px #18191b" }}>
+          <tr className="outline outline-1 dark:outline-none dark:shadow-3xl">
             <th className="p-2 font-bold">
               <p>#</p>
             </th>
@@ -71,11 +71,10 @@ export default function Home() {
             return (
               <tr
                 style={{
-                  boxShadow: "0 0 12px #18191b",
                   transition: "transform 0.2s ease-out",
                   // transform: "scale(1.03)",
                 }}
-                className="mt-6 cursor-pointer"
+                className="mt-6 cursor-pointer outline outline-1 dark:outline-none dark:shadow-3xl hover:scale-105"
                 onClick={() => router.push(`/${coin.id}`)}
               >
                 <td className="p-4">

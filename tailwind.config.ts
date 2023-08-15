@@ -13,11 +13,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        "3xl": "0 0 12px #18191b",
+        "4xl": "0 0 12px #6900ff",
+        "5xl": "0 0 12px #0097e6d9",
+      },
     },
     fontFamily: {
       rubik: ["Rubik", "sans-serif"],
     },
   },
   plugins: [],
+  darkMode: "class",
 };
 export default config;

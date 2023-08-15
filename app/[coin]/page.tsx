@@ -27,37 +27,19 @@ const CoinItem = ({ params }: { params: { coin: string } }) => {
   if (!coin)
     return (
       <div className="w-full min-h-screen flex justify-center align-middle">
-        <h1 className="self-center text-xl md:text-3xl font-bold">
+        <h1 className="self-center text-xl md:text-3xl font-bold mb-56">
           Loading...
         </h1>
       </div>
     );
   return (
     <div className="max-w-3xl m-auto px-1 sm:p-0">
-      <div
-        style={{
-          boxShadow: "0 0 12px #18191b",
-          // transform: "scale(1.03)",
-        }}
-        className="rounded-md flex flex-col my-4 mx-auto py-2 sm:py-5 px-4 text-center text-2xl md:text-4xl font-bold"
-      >
+      <div className="dark:rounded-md flex flex-col my-4 mx-auto py-2 sm:py-5 px-4 text-center text-2xl md:text-4xl font-bold outline outline-1 dark:outline-none dark:shadow-3xl">
         <h1>{coin.name}</h1>
       </div>
-      <div
-        style={{
-          boxShadow: "0 0 12px #18191b",
-          // transform: "scale(1.03)",
-        }}
-        className="rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-center text-2xl gap-4"
-      >
+      <div className="dark:rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-center text-2xl gap-4 outline outline-1 dark:outline-none dark:shadow-3xl">
         <div className="flex justify-start">
-          <div
-            style={{
-              boxShadow: "0 0 12px #6900ff",
-              // transform: "scale(1.03)",
-            }}
-            className="bg-[#6900ff] border border-solid border-[#6900ff] text-base leading-4 rounded-md inline p-1"
-          >
+          <div className="bg-[#0097e6d9] dark:bg-[#6900ff] border border-solid border-[#0097e6d9] dark:border-[#6900ff] text-base leading-4 rounded-md inline p-1 shadow-none dark:shadow-4xl">
             Rank # {coin.market_cap_rank}
           </div>
         </div>
@@ -89,22 +71,28 @@ const CoinItem = ({ params }: { params: { coin: string } }) => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          boxShadow: "0 0 12px #18191b",
-          // transform: "scale(1.03)",
-        }}
-        className="rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-center text-2xl gap-4"
-      >
+      <div className="dark:rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-center text-2xl gap-4 outline outline-1 dark:outline-none dark:shadow-3xl">
         <table className="text-base border-separate border-spacing-1">
           <thead>
-            <tr>
-              <th className="bg-[#333] sm:p-2 font-bold">1h</th>
-              <th className="bg-[#333] sm:p-2 font-bold">24h</th>
-              <th className="bg-[#333] sm:p-2 font-bold">7d</th>
-              <th className="bg-[#333] sm:p-2 font-bold">14d</th>
-              <th className="bg-[#333] sm:p-2 font-bold">30d</th>
-              <th className="bg-[#333] sm:p-2 font-bold">1yr</th>
+            <tr className="dark:text-white">
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                1h
+              </th>
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                24h
+              </th>
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                7d
+              </th>
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                14d
+              </th>
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                30d
+              </th>
+              <th className="bg-gray-300 dark:bg-[#333] sm:p-2 font-bold">
+                1yr
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -134,13 +122,7 @@ const CoinItem = ({ params }: { params: { coin: string } }) => {
           </tbody>
         </table>
       </div>
-      <div
-        style={{
-          boxShadow: "0 0 12px #18191b",
-          // transform: "scale(1.03)",
-        }}
-        className="rounded-md flex flex-col sm:flex-row justify-between my-4 mx-auto py-4 px-4 text-center text-base gap-2 sm:gap-8"
-      >
+      <div className="dark:rounded-md flex flex-col sm:flex-row justify-between my-4 mx-auto py-4 px-4 text-center text-base gap-2 sm:gap-8 outline outline-1 dark:outline-none dark:shadow-3xl">
         <div className="flex flex-col flex-1 gap-2">
           <div className="flex justify-between border-b border-solid border-b-gray-500 pb-2">
             <p className="font-bold">24 Hour Low</p>
@@ -162,17 +144,11 @@ const CoinItem = ({ params }: { params: { coin: string } }) => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          boxShadow: "0 0 12px #18191b",
-          // transform: "scale(1.03)",
-        }}
-        className="rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-left text-base"
-      >
+      <div className="dark:rounded-md flex flex-col justify-between my-4 mx-auto py-4 px-4 text-left text-base outline outline-1 dark:outline-none dark:shadow-3xl">
         <h3 className="mb-4 font-bold text-lg">About</h3>
         <p
           dangerouslySetInnerHTML={{ __html: coin.description.en }}
-          className="text-white"
+          className="dark:text-white description"
         />
       </div>
     </div>
