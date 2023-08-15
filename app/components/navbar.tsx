@@ -6,7 +6,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 const Navbar = () => {
   // const [darkMode, setDarkMode] = useState<boolean>(true);
   const [lightModeOn, setLightModeOn] = useState(
-    localStorage.getItem("theme") === null ? true : false
+    localStorage.getItem("theme") === null ? false : true
   );
   useEffect(() => {
     console.log("mode", lightModeOn);
