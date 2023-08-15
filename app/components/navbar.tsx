@@ -9,7 +9,7 @@ const Navbar = () => {
     localStorage.getItem("theme") === null ? false : true
   );
   useEffect(() => {
-    console.log("mode", lightModeOn);
+    // console.log("mode", lightModeOn);
 
     if (!lightModeOn) {
       document.documentElement.classList.add("dark");
