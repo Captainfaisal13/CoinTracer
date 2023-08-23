@@ -5,27 +5,25 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Navbar = () => {
   // const [darkMode, setDarkMode] = useState<boolean>(true);
-  const [lightModeOn, setLightModeOn] = useState(
-    localStorage.getItem("theme") === null ? false : true
-  );
-  useEffect(() => {
-    // console.log("mode", lightModeOn);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-    if (!lightModeOn) {
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    setIsDarkMode(savedMode === "true" || !localStorage.getItem("darkMode")); // Default to true on first visit
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode.toString()); // Update localStorage here
+  };
+  useEffect(() => {
+    if (isDarkMode) {
       document.documentElement.classList.add("dark");
-      // document.querySelectorAll(".tr-box-shadow").forEach((ele) => {
-      //   ele.classList.add("boxShadow");
-      // });
-      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      // document.querySelectorAll(".tr-box-shadow").forEach((ele) => {
-      //   ele.classList.remove("boxShadow");
-      // });
-      localStorage.removeItem("theme");
     }
-    // console.log("theme", localStorage.getItem("theme"));
-  }, [lightModeOn]);
+  }, [isDarkMode]);
   return (
     <div className="py-4">
       <Link
@@ -42,8 +40,8 @@ const Navbar = () => {
             right: "7%",
             marginRight: "1rem",
           }}
-          checked={!lightModeOn}
-          onChange={() => setLightModeOn(!lightModeOn)}
+          checked={isDarkMode}
+          onChange={() => toggleDarkMode()}
           size={50}
         />
       </div>
